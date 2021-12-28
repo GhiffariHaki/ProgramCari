@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('search');
+});
+
+Route::get('/database', [MahasiswaController::class, "index"])->name("database");
+Route::get('/exportdatabase', [MahasiswaController::class, "export"])->name("database-export");
+Route::post('/importdatabase', [MahasiswaController::class, "import"])->name("database-import");
+
+Route::get('/upload', function () {
+    return view('upload');
 });
