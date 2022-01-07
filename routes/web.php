@@ -15,14 +15,23 @@ use App\Http\Controllers\SearchController;
 |
 */
 
-Route::get('/', [SearchController::class], 'search');
-Route::get('/search', [SearchController::class, "query"])->name("search-cari");
+Route::get('/', function () {
+    return view('welcome');
+});
 
-#Route Buat Kepeluarn Import Export Database
-Route::get('/database', [MahasiswaController::class, "index"])->name("database");
-Route::get('/exportdatabase', [MahasiswaController::class, "export"])->name("database-export");
-Route::post('/importdatabase', [MahasiswaController::class, "import"])->name("database-import");
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::get('/upload', function () {
-    return view('upload');
+require __DIR__.'/auth.php';
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/cari', function () {return view('search');});
+    Route::get('/search', [SearchController::class, "query"])->name("search-cari");
+
+    #Route Buat Kepeluarn Import Export Database
+    Route::get('/database', [MahasiswaController::class, "index"])->name("database");
+    Route::get('/exportdatabase', [MahasiswaController::class, "export"])->name("database-export");
+    Route::post('/importdatabase', [MahasiswaController::class, "import"])->name("database-import");
+    Route::get('/upload', function () {return view('upload');});
 });
