@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
+// Route::get('/image-view', [ImageController::class, "index"]);
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -33,5 +36,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/database', [MahasiswaController::class, "index"])->name("database");
     Route::get('/exportdatabase', [MahasiswaController::class, "export"])->name("database-export");
     Route::post('/importdatabase', [MahasiswaController::class, "import"])->name("database-import");
-    Route::get('/upload', function () {return view('upload');});
+    Route::get('/uploadfiles', [ImageController::class, "index"]);
+    Route::post('/image-submit', [ImageController::class, "store"]);
+
 });

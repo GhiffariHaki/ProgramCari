@@ -65,6 +65,8 @@
     <!-- optionally if you need translation for your language then include the locale file as mentioned below (replace LANG.js with your language locale) -->
     <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.5/js/locales/LANG.js"></script>
 
+    {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> --}}
+
 
 </head>
 <body>
@@ -97,7 +99,7 @@
                             <a class="nav-link" href="{{ url('/database') }}"><span class="fas fa-database"></span> Database</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/upload') }}"><span class="fas fa-upload"></span> Upload</a>
+                            <a class="nav-link" href="{{ url('/uploadfiles') }}"><span class="fas fa-upload"></span> Upload</a>
                         </li>
                     </ul>
                 </div>

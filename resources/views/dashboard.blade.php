@@ -236,7 +236,7 @@
                             </a>
                         </div>
                         <div class="col-2 col-md-3 mt-2 mx-auto">
-                            <a class="h-100 block block-rounded block-bordered block-link-shadow text-center" href="{{ url('/upload') }}">
+                            <a class="h-100 block block-rounded block-bordered block-link-shadow text-center" href="{{ url('/uploadfiles') }}">
                                 <div class="my-5 block-content">
                                     <p>
                                         <i class="fas fa-upload fa-3x text-primary"></i>
