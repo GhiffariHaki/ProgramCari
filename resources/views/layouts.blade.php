@@ -88,7 +88,10 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}"><span class="fas fa-home"></span> Home</a>
+                            <a class="nav-link" href="{{ url('/dashboard') }}"><span class="fas fa-home"></span> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/cari') }}"><span class="fas fa-search"></span> Pencarian</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/database') }}"><span class="fas fa-database"></span> Database</a>
