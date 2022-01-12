@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Mahasiswa;
+#MODEL FILE TRANSKIRP
+
 use App\Http\Controllers\Controller;
 
 class SearchController extends Controller
@@ -16,10 +18,14 @@ class SearchController extends Controller
         if(request("query")){
             
             $searchText = request("query");
-            #$mahasiswa = Mahasiswa::all();
-            dd($searchText);
+            #dd($searchText);
 
-            #return view('hasil', compact('mahasiswa'));
+            #QUERYNYA DISINI
+            $mahasiswa = Mahasiswa::where('nama', 'LIKE', '%'.$searchText.'%')->get();
+            #QUERY JOIN FILE DIMANA NRP = NAMAFILE.TRANSKIRP
+            #QUERY JOIN FILE DIMANA NRP = NAMAFILE.IJAZAH
+
+            return view('hasil', compact('mahasiswa'));
         }
         else{
             return view('search');
