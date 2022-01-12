@@ -208,46 +208,46 @@
     </div>
 
 
-        <div class="block block-transparent">
-            <div class="block-header">
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">Menu</div>
-            </div>
-            
-            <div class="max-w-7xl mx-auto">
-                <div class="row gutters-tiny push">
-                        <div class="col-2 col-md-3 mt-2 mx-auto">
-                            <a class="h-100 block block-rounded block-bordered block-link-shadow text-center" href="{{ url('/cari') }}">
-                                <div class="my-5 block-content">
-                                    <p>
-                                        <i class="fas fa-search fa-3x text-primary"></i>
-                                    </p>
-                                    <p class="text-primary">Pencarian</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-2 col-md-3 mt-2 mx-auto">
-                            <a class="h-100 block block-rounded block-bordered block-link-shadow text-center" href="{{ url('/database') }}">
-                                <div class="my-5 block-content">
-                                    <p>
-                                        <i class="fas fa-database fa-3x text-primary"></i>
-                                    </p>
-                                    <p class="text-primary">Database</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-2 col-md-3 mt-2 mx-auto">
-                            <a class="h-100 block block-rounded block-bordered block-link-shadow text-center" href="{{ url('/uploadfiles') }}">
-                                <div class="my-5 block-content">
-                                    <p>
-                                        <i class="fas fa-upload fa-3x text-primary"></i>
-                                    </p>
-                                    <p class="text-primary">Upload Files</p>
-                                </div>
-                            </a>
-                        </div>
-                                        
-            </div>
+    <div class="block block-transparent">
+        <div class="block-header">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">Menu</div>
         </div>
+        
+        <div class="max-w-7xl mx-auto">
+            <div class="row gutters-tiny push">
+                    <div class="col-2 col-md-3 mt-2 mx-auto">
+                        <a class="h-100 block block-rounded block-bordered block-link-shadow text-center" href="{{ url('/cari') }}">
+                            <div class="my-5 block-content">
+                                <p>
+                                    <i class="fas fa-search fa-3x text-primary"></i>
+                                </p>
+                                <p class="text-primary">Pencarian</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-2 col-md-3 mt-2 mx-auto">
+                        <a class="h-100 block block-rounded block-bordered block-link-shadow text-center" href="{{ url('/database') }}">
+                            <div class="my-5 block-content">
+                                <p>
+                                    <i class="fas fa-database fa-3x text-primary"></i>
+                                </p>
+                                <p class="text-primary">Database</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-2 col-md-3 mt-2 mx-auto">
+                        <a class="h-100 block block-rounded block-bordered block-link-shadow text-center" href="{{ url('/uploadfiles') }}">
+                            <div class="my-5 block-content">
+                                <p>
+                                    <i class="fas fa-upload fa-3x text-primary"></i>
+                                </p>
+                                <p class="text-primary">Upload Files</p>
+                            </div>
+                        </a>
+                    </div>
+                                    
+        </div>
+    </div>
 
 </x-app-layout>
 

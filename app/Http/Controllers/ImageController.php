@@ -10,9 +10,23 @@ class ImageController extends Controller
         return view('upload');
     }
 
-    public function store(Request $request) {
+    public function piagam() {
+        return view('uploadpiagam');
+    }
+
+    public function transkrip() {
+        return view('uploadtranskrip');
+    }
+
+    public function store_transkrip(Request $request) {
         $imageName=$request->file->getClientOriginalName();
-        $request->file->move(public_path('upload'), $imageName);
-        return response()->json(['uploaded'=>'/upload/'.$imageName]);
+        $request->file->move(public_path('transkrip'), $imageName);
+        return response()->json(['uploaded'=>'/transkrip/'.$imageName]);
+    }
+
+    public function store_piagam(Request $request) {
+        $imageName=$request->file->getClientOriginalName();
+        $request->file->move(public_path('piagam'), $imageName);
+        return response()->json(['uploaded'=>'/piagam/'.$imageName]);
     }
 }

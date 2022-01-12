@@ -37,6 +37,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/exportdatabase', [MahasiswaController::class, "export"])->name("database-export");
     Route::post('/importdatabase', [MahasiswaController::class, "import"])->name("database-import");
     Route::get('/uploadfiles', [ImageController::class, "index"]);
-    Route::post('/image-submit', [ImageController::class, "store"]);
+    Route::get('/uploadpiagam', [ImageController::class, "piagam"]);
+    Route::get('/uploadtranskrip', [ImageController::class, "transkrip"]);
+    Route::post('/piagam-submit', [ImageController::class, "store_piagam"]);
+    Route::post('/transkrip-submit', [ImageController::class, "store_transkrip"]);
 
 });
