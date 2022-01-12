@@ -21,7 +21,8 @@ class SearchController extends Controller
             #dd($searchText);
 
             #QUERYNYA DISINI
-            $mahasiswa = Mahasiswa::where('nama', 'LIKE', '%'.$searchText.'%')->get();
+            $mahasiswa = Mahasiswa::where('nama', 'LIKE', '%'.$searchText.'%')
+                        ->orWhere('nrp', 'LIKE', '%'.$searchText.'%')->get();
             #QUERY JOIN FILE DIMANA NRP = NAMAFILE.TRANSKIRP
             #QUERY JOIN FILE DIMANA NRP = NAMAFILE.IJAZAH
 
