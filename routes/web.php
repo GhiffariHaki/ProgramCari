@@ -29,8 +29,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/cari', function () {return view('search');});
-    Route::get('/search', [SearchController::class, "query"])->name("search-cari");
+    Route::get('/cari', [SearchController::class, "index"])->name("search");
 
     #Route Buat Kepeluarn Import Export Database
     Route::get('/database', [MahasiswaController::class, "index"])->name("database");

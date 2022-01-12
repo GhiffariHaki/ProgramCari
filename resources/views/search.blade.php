@@ -9,13 +9,14 @@
                     <h1>Cari Dokumen</h1>
                 </div>
                 <div class="card-body">
-                    <form method="get" action="{{ url('/') }}">
-                    <div class="input-group mb-3">
-                        <input type="search" class="form-control" placeholder="Cari Dokumen...." name="query">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="submit">Cari</button>
+                    <form action = "/cari">
+                        <div class="input-group mb-3">
+                            <input type="search" class="form-control" placeholder="Cari Dokumen...." name="query">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="submit">Cari</button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
