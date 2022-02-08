@@ -14,7 +14,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h1>Upload Transkrip</h1>
+                    <h1>Upload Ijazah</h1>
                 </div>
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <div class="form-group">
@@ -28,7 +28,7 @@
     <script type="text/javascript">
         $("#file-1").fileinput({
             theme:'fa',
-            uploadUrl:"/transkrip-submit",
+            uploadUrl:"/ijazah-submit",
             uploadExtraData:function () {
                 return{
                     _token:$("input[name='_token']").val()

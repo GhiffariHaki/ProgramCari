@@ -25,6 +25,10 @@
             </div>
         </div>
     </div>
+
+
+
+
     <script type="text/javascript">
         $("#file-1").fileinput({
             theme:'fa',
@@ -34,7 +38,7 @@
                     _token:$("input[name='_token']").val()
                 };
             },
-            allowedFileExtensions:['jpg', 'png', 'jpeg'],
+            allowedFileExtensions:['jpg'],
             overwriteInitial:false,
             maxFilesize:10000,
             maxfileNum:500,

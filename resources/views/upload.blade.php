@@ -190,35 +190,44 @@
                     <h1>Upload Files</h1>
                 </div>
                 <div class="block block-transparent">
-        <div class="block-header">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">Menu</div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto">
-            <div class="row gutters-tiny push">
-                    <div class="col-2 col-md-3 mt-2 mx-auto">
-                        <a class="h-100 block block-rounded block-bordered block-link-shadow text-center" href="{{ url('/uploadpiagam') }}">
-                            <div class="my-5 block-content">
-                                <p>
-                                    <i class="fas fa-award fa-3x text-primary"></i>
-                                </p>
-                                <p class="text-primary">Piagam</p>
-                            </div>
-                        </a>
+                    <div class="block-header">
+                        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">Menu</div>
                     </div>
-                    <div class="col-2 col-md-3 mt-2 mx-auto">
-                        <a class="h-100 block block-rounded block-bordered block-link-shadow text-center" href="{{ url('/uploadtranskrip') }}">
-                            <div class="my-5 block-content">
-                                <p>
-                                    <i class="fas fa-file-alt fa-3x text-primary"></i>
-                                </p>
-                                <p class="text-primary">Transkrip</p>
-                            </div>
-                        </a>
-                    </div>        
-        </div>
-    </div>
-                
+                    
+                    <div class="max-w-7xl mx-auto">
+                        <div class="row gutters-tiny push">
+                                <div class="col-2 col-md-3 mt-2 mx-auto">
+                                    <a class="h-100 block block-rounded block-bordered block-link-shadow text-center" href="{{ url('/uploadijazah') }}">
+                                        <div class="my-5 block-content">
+                                            <p>
+                                                <i class="fas fa-file fa-3x text-primary"></i>
+                                            </p>
+                                            <p class="text-primary">Ijazah</p>
+                                        </div>
+                                    </a>
+                                </div>       
+                                <div class="col-2 col-md-3 mt-2 mx-auto">
+                                    <a class="h-100 block block-rounded block-bordered block-link-shadow text-center" href="{{ url('/uploadtranskrip') }}">
+                                        <div class="my-5 block-content">
+                                            <p>
+                                                <i class="fas fa-file-alt fa-3x text-primary"></i>
+                                            </p>
+                                            <p class="text-primary">Transkrip</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-2 col-md-3 mt-2 mx-auto">
+                                    <a class="h-100 block block-rounded block-bordered block-link-shadow text-center" href="{{ url('/uploadpiagam') }}">
+                                        <div class="my-5 block-content">
+                                            <p>
+                                                <i class="fas fa-award fa-3x text-primary"></i>
+                                            </p>
+                                            <p class="text-primary">Piagam</p>
+                                        </div>
+                                    </a>
+                                </div>      
+                    </div>
+                </div>    
             </div>
         </div>
     </div>

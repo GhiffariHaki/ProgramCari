@@ -38,7 +38,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/uploadfiles', [ImageController::class, "index"]);
     Route::get('/uploadpiagam', [ImageController::class, "piagam"]);
     Route::get('/uploadtranskrip', [ImageController::class, "transkrip"]);
+    Route::get('/uploadijazah', [ImageController::class, "ijazah"]);
     Route::post('/piagam-submit', [ImageController::class, "store_piagam"]);
     Route::post('/transkrip-submit', [ImageController::class, "store_transkrip"]);
+    Route::post('/ijazah-submit', [ImageController::class, "store_ijazah"]);
 
 });

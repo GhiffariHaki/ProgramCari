@@ -18,6 +18,10 @@ class ImageController extends Controller
         return view('uploadtranskrip');
     }
 
+    public function ijazah() {
+        return view('uploadijazah');
+    }
+
     public function store_transkrip(Request $request) {
         $imageName=$request->file->getClientOriginalName();
         $request->file->move(public_path('transkrip'), $imageName);
@@ -29,4 +33,11 @@ class ImageController extends Controller
         $request->file->move(public_path('piagam'), $imageName);
         return response()->json(['uploaded'=>'/piagam/'.$imageName]);
     }
+
+    public function store_ijazah(Request $request) {
+        $imageName=$request->file->getClientOriginalName();
+        $request->file->move(public_path('ijazah'), $imageName);
+        return response()->json(['uploaded'=>'/ijazah/'.$imageName]);
+    }
+
 }
