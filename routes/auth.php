@@ -5,17 +5,18 @@ use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\NewPasswordController;
+use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/register', [RegisteredUserController::class, 'create'])
-//                 ->middleware('guest')
-//                 ->name('register');
+Route::get('/register', [RegisteredUserController::class, 'create'])
+                ->middleware('guest')
+                ->name('register');
 
-// Route::post('/register', [RegisteredUserController::class, 'store'])
-//                 ->middleware('guest');
+Route::post('/register', [RegisteredUserController::class, 'store'])
+                ->middleware('guest');
 
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])
                 ->middleware('guest')
@@ -39,6 +40,22 @@ Route::get('/reset-password/{token}', [NewPasswordController::class, 'create'])
 Route::post('/reset-password', [NewPasswordController::class, 'store'])
                 ->middleware('guest')
                 ->name('password.update');
+
+Route::get('/change-password', [PasswordResetLinkController::class, 'create'])
+                ->middleware('auth')
+                ->name('password.change');
+
+Route::post('/change-password', [PasswordResetLinkController::class, 'store'])
+                ->middleware('auth')
+                ->name('password.email');
+
+// Route::get('/changing-password/{token}', [ChangePasswordController::class, 'create'])
+//                 ->middleware('auth')
+//                 ->name('password.reset');
+
+// Route::post('/changing-password', [ChangePasswordController::class, 'store'])
+//                 ->middleware('auth')
+//                 ->name('password.update');
 
 Route::get('/verify-email', [EmailVerificationPromptController::class, '__invoke'])
                 ->middleware('auth')

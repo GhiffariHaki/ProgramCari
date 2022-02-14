@@ -44,6 +44,10 @@
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
                         </form>
+
+                        <x-dropdown-link :href="route('password.change')">
+                            {{ __('Change Password') }}
+                        </x-dropdown-link>
                     </x-slot>
                 </x-dropdown>
             </div>
@@ -86,6 +90,10 @@
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
                 </form>
+
+                <x-responsive-nav-link :href="route('password.change')">
+                    {{ __('Change Password') }}
+                </x-responsive-nav-link>
             </div>
         </div>
     </div>
