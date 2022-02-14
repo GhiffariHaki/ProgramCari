@@ -192,6 +192,9 @@
 
 
 <x-app-layout>
+    <div class="block-header">
+        {{-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">Menu</div> --}}
+    </div>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
