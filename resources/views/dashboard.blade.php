@@ -245,17 +245,29 @@
                             </div>
                         </a>
                     </div>                        --}}
-        </div>
-        <form action = "/cari">
-            <div class="input-group mb-3">
-                <input type="search" class="form-control" placeholder="Cari Dokumen...." name="query">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="submit">Cari</button>
+
+                    
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card card-info card-outline">
+                <div class="card-header bg-primary">
+                    <h1 style="color:white;">Cari Dokumen <span class = "fas fa-search"></h1>
+                </div>
+                <div class="card-body">
+                    <form action = "/cari">
+                        <div class="input-group mb-3">
+                            <input type="search" class="form-control" placeholder="Masukkan Nama atau NRP..." name="query">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="submit">Cari</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </form> 
+        </div>
     </div>
-
+</div>
 </x-app-layout>
 
 

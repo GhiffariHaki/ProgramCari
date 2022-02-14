@@ -195,16 +195,18 @@
     <div class="block-header">
         {{-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">Menu</div> --}}
     </div>
+
+
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-16">
             <div class="card card-info card-outline">
                 {{-- <div class="card-header">
                     <h1> </h1>
                 </div> --}}
                 <div class="card-body">
                     <table class="table table-bordered">
-                        <tr>
+                        <tr class = "bg-primary">
                             <th>Nama</th>
                             <th>NRP</th>
                             <th>Jurusan</th>
@@ -223,23 +225,26 @@
                             <td>{{ $item->angkatan }}</td>
                             <td>
                                 @if (file_exists(public_path('/ijazah/'.$item->nrp.'.jpg')))
-                                <img src="{{ asset('/ijazah/'.$item->nrp.'.jpg') }}" width = "50px" height = "50px">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><span class="fas fa-eye "></span>View</button>
+                                <button type="button" class="btn btn-success"><span class="fas fa-print"></span>Print</button>
                                 @else
-                                <img src="{{ asset('/ijazah/'.'LogoError.png') }}" width = "50px" height = "50px">
+                                Tidak ada
                                 @endif
                             </td>
                             <td>
                                 @if (file_exists(public_path('/transkrip/'.$item->nrp.'.jpg')))
-                                <img src="{{ asset('/transkrip/'.$item->nrp.'.jpg') }}" width = "50px" height = "50px">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><span class="fas fa-eye"></span>View</button>
+                                <button type="button" class="btn btn-success"><span class="fas fa-print"></span>Print</button>
                                 @else
-                                <img src="{{ asset('/transkrip/'.'LogoError.png') }}" width = "50px" height = "50px">
+                                Tidak ada
                                 @endif
                             </td>
                             <td>
                                 @if (file_exists(public_path('/piagam/'.$item->nrp.'.jpg')))
-                                <img src="{{ asset('/piagam/'.$item->nrp.'.jpg') }}" width = "50px" height = "50px">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><span class="fas fa-eye"></span>View</button>
+                                <button type="button" class="btn btn-success"><span class="fas fa-print"></span>Print</button>
                                 @else
-                                <img src="{{ asset('/piagam/'.'LogoError.png') }}" width = "50px" height = "50px">
+                                Tidak ada
                                 @endif
                             </td>
                         </tr>
@@ -249,6 +254,24 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Preview Gambar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h2>Gambar</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
     {{ $mahasiswa->appends($_GET)->links() }}
 </div>
 

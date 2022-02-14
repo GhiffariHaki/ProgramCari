@@ -16,11 +16,10 @@ use App\Http\Controllers\ImageController;
 |
 */
 
-Route::get('/', function () {
-    return view('auth/login');
-});
-
 // Route::get('/image-view', [ImageController::class, "index"]);
+Route::get('/', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
