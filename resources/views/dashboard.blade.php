@@ -197,7 +197,7 @@
         </h2>
     </x-slot> --}}
 
-    <div class="py-12">
+    {{-- <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
@@ -205,17 +205,17 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
     <div class="block block-transparent">
         <div class="block-header">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">Menu</div>
+            {{-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">Menu</div> --}}
         </div>
         
         <div class="max-w-7xl mx-auto">
             <div class="row gutters-tiny push">
-                    <div class="col-2 col-md-3 mt-2 mx-auto">
+                    {{-- <div class="col-2 col-md-3 mt-2 mx-auto">
                         <a class="h-100 block block-rounded block-bordered block-link-shadow text-center" href="{{ url('/cari') }}">
                             <div class="my-5 block-content">
                                 <p>
@@ -244,9 +244,16 @@
                                 <p class="text-primary">Upload Files</p>
                             </div>
                         </a>
-                    </div>
-                                    
+                    </div>                        --}}
         </div>
+        <form action = "/cari">
+            <div class="input-group mb-3">
+                <input type="search" class="form-control" placeholder="Cari Dokumen...." name="query">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">Cari</button>
+                </div>
+            </div>
+        </form> 
     </div>
 
 </x-app-layout>
