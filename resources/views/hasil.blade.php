@@ -225,24 +225,78 @@
                             <td>{{ $item->angkatan }}</td>
                             <td>
                                 @if (file_exists(public_path('/ijazah/'.$item->nrp.'.jpg')))
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><span class="fas fa-eye "></span>View</button>
+                                <!-- BUTTON -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterIjazah"><span class="fas fa-eye "></span>View</button>
                                 <button type="button" class="btn btn-success"><span class="fas fa-print"></span>Print</button>
+
+                                <!-- MODAL PREVIEW IJAZAH -->>
+                                <div class="modal fade" id="exampleModalCenterIjazah" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Preview Gambar Ijazah</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <img src ="{{ asset('/ijazah/'.$item->nrp.'.jpg') }}" width = "800px" height = "500px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 @else
                                 Tidak ada
                                 @endif
                             </td>
                             <td>
                                 @if (file_exists(public_path('/transkrip/'.$item->nrp.'.jpg')))
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><span class="fas fa-eye"></span>View</button>
+                                <!-- BUTTON -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterTranskrip"><span class="fas fa-eye"></span>View</button>
                                 <button type="button" class="btn btn-success"><span class="fas fa-print"></span>Print</button>
+
+                                <!-- MODAL PREVIEW TRANSKRIP -->
+                                <div class="modal fade" id="exampleModalCenterTranskrip" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Preview Gambar Transkrip</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <img src ="{{ asset('/transkrip/'.$item->nrp.'.jpg') }}" width = "800px" height = "500px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 @else
                                 Tidak ada
                                 @endif
                             </td>
                             <td>
                                 @if (file_exists(public_path('/piagam/'.$item->nrp.'.jpg')))
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><span class="fas fa-eye"></span>View</button>
+                                <!-- BUTTON -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterPiagam"><span class="fas fa-eye"></span>View</button>
                                 <button type="button" class="btn btn-success"><span class="fas fa-print"></span>Print</button>
+
+                                <!-- MODAL PREVIEW PIAGAM CUM LAUDE -->>
+                                <div class="modal fade" id="exampleModalCenterPiagam" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Preview Gambar Piagam</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <img src ="{{ asset('/piagam/'.$item->nrp.'.jpg') }}" width = "800px" height = "500px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 @else
                                 Tidak ada
                                 @endif
