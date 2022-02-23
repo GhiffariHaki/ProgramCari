@@ -227,7 +227,9 @@
                                 @if (file_exists(public_path('/ijazah/'.$item->nrp.'.jpg')))
                                 <!-- BUTTON -->
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterIjazah"><span class="fas fa-eye "></span>View</button>
-                                <button type="button" class="btn btn-success"><span class="fas fa-print"></span>Print</button>
+                                {{-- <button type="button" class="btn btn-success"><span class="fas fa-print"></span>Print</button> --}}
+                                {{-- <button type="button" class="btn btn-primary" onClick="newWindow = window.open('{{ asset('/ijazah/'.$item->nrp.'.jpg') }}');"><span class="fas fa-eye"></span>View</button> --}}
+                                <button type="button" class="btn btn-success" onClick="newWindow = window.open('{{ asset('/ijazah/'.$item->nrp.'.jpg') }}'); newWindow.print();"><span class="fas fa-print"></span>Print</button>
 
                                 <!-- MODAL PREVIEW IJAZAH -->>
                                 <div class="modal fade" id="exampleModalCenterIjazah" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -253,7 +255,9 @@
                                 @if (file_exists(public_path('/transkrip/'.$item->nrp.'.jpg')))
                                 <!-- BUTTON -->
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterTranskrip"><span class="fas fa-eye"></span>View</button>
-                                <button type="button" class="btn btn-success"><span class="fas fa-print"></span>Print</button>
+                                {{-- <button type="button" class="btn btn-success"><span class="fas fa-print"></span>Print</button> --}}
+                                {{-- <button type="button" class="btn btn-primary" onClick="newWindow = window.open('{{ asset('/transkrip/'.$item->nrp.'.jpg') }}');"><span class="fas fa-eye"></span>View</button> --}}
+                                <button type="button" class="btn btn-success" onClick="newWindow = window.open('{{ asset('/transkrip/'.$item->nrp.'.jpg') }}'); newWindow.print();"><span class="fas fa-print"></span>Print</button>
 
                                 <!-- MODAL PREVIEW TRANSKRIP -->
                                 <div class="modal fade" id="exampleModalCenterTranskrip" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -279,7 +283,9 @@
                                 @if (file_exists(public_path('/piagam/'.$item->nrp.'.jpg')))
                                 <!-- BUTTON -->
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterPiagam"><span class="fas fa-eye"></span>View</button>
-                                <button type="button" class="btn btn-success"><span class="fas fa-print"></span>Print</button>
+                                {{-- <button type="button" class="btn btn-success"><span class="fas fa-print"></span>Print</button> --}}
+                                {{-- <button type="button" class="btn btn-primary" onClick="newWindow = window.open('{{ asset('/piagam/'.$item->nrp.'.jpg') }}');"><span class="fas fa-eye"></span>View</button> --}}
+                                <button type="button" class="btn btn-success" onClick="newWindow = window.open('{{ asset('/piagam/'.$item->nrp.'.jpg') }}'); newWindow.print();"><span class="fas fa-print"></span>Print</button>
 
                                 <!-- MODAL PREVIEW PIAGAM CUM LAUDE -->>
                                 <div class="modal fade" id="exampleModalCenterPiagam" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -328,5 +334,4 @@
 
     {{ $mahasiswa->appends($_GET)->links() }}
 </div>
-
 </x-app-layout>
