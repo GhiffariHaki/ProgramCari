@@ -209,20 +209,20 @@
                         <tr class = "bg-primary">
                             <th>Nama</th>
                             <th>NRP</th>
-                            <th>Jurusan</th>
-                            <th>Fakultas</th>
-                            <th>Angkatan</th>
+                            <th>Tempat Lahir</th>
+                            <th>Tanggal Lahir</th>
+                            <th>No Ijazah</th>
                             <th>Ijazah</th>
                             <th>Transkrip</th>
                             <th>Piagam</th>
                         </tr>
-                        @foreach ($mahasiswa as $item)
+                        @foreach ($ijazah as $item)
                         <tr>
-                            <td>{{ $item->nama }}</td>
-                            <td>{{ $item->nrp }}</td>
-                            <td>{{ $item->jurusan }}</td>
-                            <td>{{ $item->fakultas }}</td>
-                            <td>{{ $item->angkatan }}</td>
+                            <td>{{ $item->NAMA }}</td>
+                            <td>{{ $item->NRP }}</td>
+                            <td>{{ $item->TMPLAHIR }}</td>
+                            <td>{{ $item->TGLLAHIR }}</td>
+                            <td>{{ $item->NOIJAZAH }}</td>
                             <td>
                                 @if (file_exists(public_path('/ijazah/'.$item->nrp.'.jpg')))
                                 <!-- BUTTON -->
@@ -332,6 +332,6 @@
         </div>
     </div>
 
-    {{ $mahasiswa->appends($_GET)->links() }}
+    {{ $ijazah->appends($_GET)->links() }}
 </div>
 </x-app-layout>

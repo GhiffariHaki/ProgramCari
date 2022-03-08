@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Ijazah;
+use App\Models\Mahasiswa;
 #MODEL FILE TRANSKIRP
 
 use App\Http\Controllers\Controller;
@@ -21,13 +21,13 @@ class SearchController extends Controller
             #dd($searchText);
 
             #QUERYNYA DISINI
-            $ijazah = Ijazah::where('NAMA', 'LIKE', '%'.$searchText.'%')
-                        ->orWhere('NRP', 'LIKE', '%'.$searchText.'%')->paginate(7);
+            $mahasiswa = Mahasiswa::where('nama', 'LIKE', '%'.$searchText.'%')
+                        ->orWhere('nrp', 'LIKE', '%'.$searchText.'%')->paginate(7);
                         
             #QUERY JOIN FILE DIMANA NRP = NAMAFILE.TRANSKIRP
             #QUERY JOIN FILE DIMANA NRP = NAMAFILE.IJAZAH
 
-            return view('hasil', compact('ijazah'));
+            return view('hasil', compact('mahasiswa'));
         }
         else{
             return view('search');
