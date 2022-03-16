@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 /**
  * @property string $NRP
@@ -48,6 +49,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Ijazah extends Model
 {
+    use Sortable;
+
     /**
      * The table associated with the model.
      * 
@@ -79,5 +82,7 @@ class Ijazah extends Model
     /**
      * @var array
      */
-    protected $fillable = ['NAMA', 'TMPLAHIR', 'TGLLAHIR', 'ALAMAT', 'KOTA', 'TELP', 'NAMAORTU', 'PROSESI_WISUDA', 'PERIODEWISUDA', 'TGLKELULUSAN', 'NOIJAZAH', 'LULUSANKE', 'JUDULTA', 'IPK', 'LAMASTUDI', 'PREDIKAT', 'STATUSCEK', 'TGLCEK', 'BIDANG', 'email', 'JK', 'BIDANGEN', 'pembimbing1', 'pembimbing2', 'pembimbing3', 'flag', 'noseri', 'TGLWISUDA', 'kewarganegaraan', 'nrp_urut', 'nomor_ijazah', 'nrp_baru', 'keterangan', 'bidikmisi', 'nik', 'is_manual', 'pin', 'pembimbing4', 'periode_semester'];
+    protected $fillable = ['NRP', 'NAMA', 'TMPLAHIR', 'TGLLAHIR', 'ALAMAT', 'KOTA', 'TELP', 'NAMAORTU', 'PROSESI_WISUDA', 'PERIODEWISUDA', 'TGLKELULUSAN', 'NOIJAZAH', 'LULUSANKE', 'JUDULTA', 'IPK', 'LAMASTUDI', 'PREDIKAT', 'STATUSCEK', 'TGLCEK', 'BIDANG', 'email', 'JK', 'BIDANGEN', 'pembimbing1', 'pembimbing2', 'pembimbing3', 'flag', 'noseri', 'TGLWISUDA', 'kewarganegaraan', 'nrp_urut', 'nomor_ijazah', 'nrp_baru', 'keterangan', 'bidikmisi', 'nik', 'is_manual', 'pin', 'pembimbing4', 'periode_semester'];
+
+    public $sortable = ['NRP', 'NAMA'];
 }

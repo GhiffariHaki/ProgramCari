@@ -8,6 +8,7 @@
     
 <!-- END Stylesheets -->
 
+
 <style>
     .text-primary {
         color: #013880 !important;
@@ -196,142 +197,141 @@
         {{-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">Menu</div> --}}
     </div>
 
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-16">
+                <div class="card card-info card-outline">
+                    {{-- <div class="card-header">
+                        <h1> </h1>
+                    </div> --}}
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <tr class = "bg-primary">
+                                <th>@sortablelink('NAMA', 'Nama')</th>
+                                <th>@sortablelink('NRP', 'NRP')</th>
+                                <th>Tempat Lahir</th>
+                                <th>Tanggal Lahir</th>
+                                <th>No Ijazah</th>
+                                <th>Ijazah</th>
+                                <th>Transkrip</th>
+                                <th>Piagam</th>
+                            </tr>
+                            @foreach ($ijazah as $item)
+                            <tr>
+                                <td>{{ $item->NAMA }}</td>
+                                <td>{{ $item->NRP }}</td>
+                                <td>{{ $item->TMPLAHIR }}</td>
+                                <td>{{ $item->TGLLAHIR }}</td>
+                                <td>{{ $item->NOIJAZAH }}</td>
+                                <td>
+                                    @if (file_exists(public_path('/ijazah/'.$item->nrp.'.jpg')))
+                                    <!-- BUTTON -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterIjazah"><span class="fas fa-eye "></span>View</button>
+                                    {{-- <button type="button" class="btn btn-success"><span class="fas fa-print"></span>Print</button> --}}
+                                    {{-- <button type="button" class="btn btn-primary" onClick="newWindow = window.open('{{ asset('/ijazah/'.$item->nrp.'.jpg') }}');"><span class="fas fa-eye"></span>View</button> --}}
+                                    <button type="button" class="btn btn-success" onClick="newWindow = window.open('{{ asset('/ijazah/'.$item->nrp.'.jpg') }}'); newWindow.print();"><span class="fas fa-print"></span>Print</button>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-16">
-            <div class="card card-info card-outline">
-                {{-- <div class="card-header">
-                    <h1> </h1>
-                </div> --}}
-                <div class="card-body">
-                    <table class="table table-bordered">
-                        <tr class = "bg-primary">
-                            <th>Nama</th>
-                            <th>NRP</th>
-                            <th>Tempat Lahir</th>
-                            <th>Tanggal Lahir</th>
-                            <th>No Ijazah</th>
-                            <th>Ijazah</th>
-                            <th>Transkrip</th>
-                            <th>Piagam</th>
-                        </tr>
-                        @foreach ($ijazah as $item)
-                        <tr>
-                            <td>{{ $item->NAMA }}</td>
-                            <td>{{ $item->NRP }}</td>
-                            <td>{{ $item->TMPLAHIR }}</td>
-                            <td>{{ $item->TGLLAHIR }}</td>
-                            <td>{{ $item->NOIJAZAH }}</td>
-                            <td>
-                                @if (file_exists(public_path('/ijazah/'.$item->nrp.'.jpg')))
-                                <!-- BUTTON -->
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterIjazah"><span class="fas fa-eye "></span>View</button>
-                                {{-- <button type="button" class="btn btn-success"><span class="fas fa-print"></span>Print</button> --}}
-                                {{-- <button type="button" class="btn btn-primary" onClick="newWindow = window.open('{{ asset('/ijazah/'.$item->nrp.'.jpg') }}');"><span class="fas fa-eye"></span>View</button> --}}
-                                <button type="button" class="btn btn-success" onClick="newWindow = window.open('{{ asset('/ijazah/'.$item->nrp.'.jpg') }}'); newWindow.print();"><span class="fas fa-print"></span>Print</button>
-
-                                <!-- MODAL PREVIEW IJAZAH -->>
-                                <div class="modal fade" id="exampleModalCenterIjazah" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLongTitle">Preview Gambar Ijazah</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <img src ="{{ asset('/ijazah/'.$item->nrp.'.jpg') }}" width = "800px" height = "500px">
+                                    <!-- MODAL PREVIEW IJAZAH -->>
+                                    <div class="modal fade" id="exampleModalCenterIjazah" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Preview Gambar Ijazah</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img src ="{{ asset('/ijazah/'.$item->nrp.'.jpg') }}" width = "800px" height = "500px">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                @else
-                                Tidak ada
-                                @endif
-                            </td>
-                            <td>
-                                @if (file_exists(public_path('/transkrip/'.$item->nrp.'.jpg')))
-                                <!-- BUTTON -->
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterTranskrip"><span class="fas fa-eye"></span>View</button>
-                                {{-- <button type="button" class="btn btn-success"><span class="fas fa-print"></span>Print</button> --}}
-                                {{-- <button type="button" class="btn btn-primary" onClick="newWindow = window.open('{{ asset('/transkrip/'.$item->nrp.'.jpg') }}');"><span class="fas fa-eye"></span>View</button> --}}
-                                <button type="button" class="btn btn-success" onClick="newWindow = window.open('{{ asset('/transkrip/'.$item->nrp.'.jpg') }}'); newWindow.print();"><span class="fas fa-print"></span>Print</button>
+                                    @else
+                                    Tidak ada
+                                    @endif
+                                </td>
+                                <td>
+                                    @if (file_exists(public_path('/transkrip/'.$item->nrp.'.jpg')))
+                                    <!-- BUTTON -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterTranskrip"><span class="fas fa-eye"></span>View</button>
+                                    {{-- <button type="button" class="btn btn-success"><span class="fas fa-print"></span>Print</button> --}}
+                                    {{-- <button type="button" class="btn btn-primary" onClick="newWindow = window.open('{{ asset('/transkrip/'.$item->nrp.'.jpg') }}');"><span class="fas fa-eye"></span>View</button> --}}
+                                    <button type="button" class="btn btn-success" onClick="newWindow = window.open('{{ asset('/transkrip/'.$item->nrp.'.jpg') }}'); newWindow.print();"><span class="fas fa-print"></span>Print</button>
 
-                                <!-- MODAL PREVIEW TRANSKRIP -->
-                                <div class="modal fade" id="exampleModalCenterTranskrip" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLongTitle">Preview Gambar Transkrip</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <img src ="{{ asset('/transkrip/'.$item->nrp.'.jpg') }}" width = "800px" height = "500px">
+                                    <!-- MODAL PREVIEW TRANSKRIP -->
+                                    <div class="modal fade" id="exampleModalCenterTranskrip" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Preview Gambar Transkrip</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img src ="{{ asset('/transkrip/'.$item->nrp.'.jpg') }}" width = "800px" height = "500px">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                @else
-                                Tidak ada
-                                @endif
-                            </td>
-                            <td>
-                                @if (file_exists(public_path('/piagam/'.$item->nrp.'.jpg')))
-                                <!-- BUTTON -->
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterPiagam"><span class="fas fa-eye"></span>View</button>
-                                {{-- <button type="button" class="btn btn-success"><span class="fas fa-print"></span>Print</button> --}}
-                                {{-- <button type="button" class="btn btn-primary" onClick="newWindow = window.open('{{ asset('/piagam/'.$item->nrp.'.jpg') }}');"><span class="fas fa-eye"></span>View</button> --}}
-                                <button type="button" class="btn btn-success" onClick="newWindow = window.open('{{ asset('/piagam/'.$item->nrp.'.jpg') }}'); newWindow.print();"><span class="fas fa-print"></span>Print</button>
+                                    @else
+                                    Tidak ada
+                                    @endif
+                                </td>
+                                <td>
+                                    @if (file_exists(public_path('/piagam/'.$item->nrp.'.jpg')))
+                                    <!-- BUTTON -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterPiagam"><span class="fas fa-eye"></span>View</button>
+                                    {{-- <button type="button" class="btn btn-success"><span class="fas fa-print"></span>Print</button> --}}
+                                    {{-- <button type="button" class="btn btn-primary" onClick="newWindow = window.open('{{ asset('/piagam/'.$item->nrp.'.jpg') }}');"><span class="fas fa-eye"></span>View</button> --}}
+                                    <button type="button" class="btn btn-success" onClick="newWindow = window.open('{{ asset('/piagam/'.$item->nrp.'.jpg') }}'); newWindow.print();"><span class="fas fa-print"></span>Print</button>
 
-                                <!-- MODAL PREVIEW PIAGAM CUM LAUDE -->>
-                                <div class="modal fade" id="exampleModalCenterPiagam" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLongTitle">Preview Gambar Piagam</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <img src ="{{ asset('/piagam/'.$item->nrp.'.jpg') }}" width = "800px" height = "500px">
+                                    <!-- MODAL PREVIEW PIAGAM CUM LAUDE -->>
+                                    <div class="modal fade" id="exampleModalCenterPiagam" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Preview Gambar Piagam</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img src ="{{ asset('/piagam/'.$item->nrp.'.jpg') }}" width = "800px" height = "500px">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                @else
-                                Tidak ada
-                                @endif
-                            </td>
-                        </tr>
-                        @endforeach
-                    </table>
+                                    @else
+                                    Tidak ada
+                                    @endif
+                                </td>
+                            </tr>
+                            @endforeach
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Preview Gambar</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h2>Gambar</h2>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Preview Gambar</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h2>Gambar</h2>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    {{ $ijazah->appends($_GET)->links() }}
-</div>
+        {{ $ijazah->appends($_GET)->links() }}
+    </div>
 </x-app-layout>
